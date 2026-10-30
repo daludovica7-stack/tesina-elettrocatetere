@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elettrocatetere per la fibrillazione · Progetto di tesina</title>
+<style>
+:root{
+  --bg:#ffffff; --surface:#f4f8f9; --logo:#0b2a63; --ink:#12232e; --muted:#51666f; --line:#cddbe0;
+  --sil:#6fbfb5; --pu:#e0b25a; --cu:#b5651d; --accent:#0d6e6e;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 Georgia,"Times New Roman",serif}
+h1,h2,h3,nav,.tag,button,th{font-family:"Trebuchet MS","Segoe UI",Helvetica,Arial,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+nav{display:flex;gap:22px;flex-wrap:wrap;padding:18px 0;font-size:15px;border-bottom:1px solid var(--line)}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover,nav a:focus-visible{color:var(--accent);outline:none;text-decoration:underline}
+.hero{padding:56px 0 24px}
+.hero p.tag{margin:0 0 10px;color:var(--accent);font-size:15px;font-weight:600}
+h1{font-size:clamp(34px,6vw,60px);line-height:1.05;margin:0 0 18px;letter-spacing:-.02em;max-width:16ch}
+.lead{max-width:58ch;color:var(--muted);font-size:19px;margin:0}
+.cath{margin:34px 0 8px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 14px 12px}
+.cath svg{display:block;width:100%;height:auto}
+.legend{display:flex;gap:10px;flex-wrap:wrap;margin:12px 4px 4px}
+button{font-size:14px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+button:hover{border-color:var(--accent)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+button[aria-pressed="true"]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.note{margin:6px 4px 0;font-size:15px;color:var(--muted);min-height:3.3em}
+section{padding:54px 0 6px}
+h2{font-size:clamp(26px,4vw,36px);margin:0 0 14px;letter-spacing:-.01em}
+h3{font-size:19px;margin:0 0 6px}
+p{max-width:66ch;margin:0 0 14px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px;margin-top:22px}
+.cols>div{border-top:3px solid var(--line);padding-top:12px}
+.cols>div.c1{border-color:var(--sil)} .cols>div.c2{border-color:var(--pu)} .cols>div.c3{border-color:var(--cu)}
+.scroll{overflow-x:auto;margin-top:18px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:15.5px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:14px;color:var(--muted);font-weight:600}
+tr:last-child td{border-bottom:none}
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:18px}
+.team div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.team span{color:var(--muted);font-size:15px}
+.brand{padding:22px 0 0;display:flex;flex-direction:column;line-height:1.1;color:var(--logo);font-family:"Trebuchet MS","Segoe UI",Helvetica,Arial,sans-serif}
+.brand .b1{font-size:26px;font-weight:700;letter-spacing:.01em}
+.brand .b2{font-size:15px;letter-spacing:.14em}
+.team{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.team div{text-align:center}
+.team svg{width:96px;height:96px;display:block;margin:0 auto 10px}
+footer{margin-top:60px;padding:26px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="brand" role="img" aria-label="Politecnico di Torino"><span class="b1">Politecnico</span><span class="b2">di Torino</span></div>
+<nav aria-label="Sezioni">
+  <a href="#progetto">Il progetto</a><a href="#struttura">Struttura</a><a href="#materiali">Materiali</a><a href="#team">Il gruppo</a>
+</nav>
+
+<header class="hero">
+  <p class="tag">Progetto di tesina · Politecnico di Torino</p>
+  <h1>Un elettrocatetere per la fibrillazione</h1>
+  <p class="lead">Un catetere flessibile che unisce materiali conduttori e isolanti, come poliuretano e silicone, per rilevare e trattare l’attività elettrica anomala del cuore.</p>
+
+  <div class="cath" id="cath">
+    <svg viewBox="0 0 900 150" role="img" aria-label="Schema longitudinale dell’elettrocatetere: guaina in poliuretano, rivestimento in silicone ed elettrodi ad anello">
+      <g id="g-pu">
+        <rect x="20" y="52" width="620" height="46" rx="23" fill="var(--pu)"/>
+      </g>
+      <g id="g-sil">
+        <rect x="560" y="56" width="300" height="38" rx="19" fill="var(--sil)"/>
+        <circle cx="860" cy="75" r="19" fill="var(--sil)"/>
+      </g>
+      <g id="g-cond">
+        <line x1="30" y1="75" x2="850" y2="75" stroke="var(--cu)" stroke-width="3" stroke-dasharray="2 5"/>
+        <rect x="640" y="52" width="14" height="46" rx="3" fill="var(--cu)"/>
+        <rect x="690" y="52" width="14" height="46" rx="3" fill="var(--cu)"/>
+        <rect x="740" y="52" width="14" height="46" rx="3" fill="var(--cu)"/>
+        <rect x="790" y="52" width="14" height="46" rx="3" fill="var(--cu)"/>
+        <circle cx="866" cy="75" r="11" fill="var(--cu)"/>
+      </g>
+      <text x="30" y="36" font-size="15" fill="var(--muted)" font-family="Trebuchet MS,Segoe UI,Arial,sans-serif">Estremità prossimale</text>
+      <text x="700" y="36" font-size="15" fill="var(--muted)" font-family="Trebuchet MS,Segoe UI,Arial,sans-serif">Estremità distale con elettrodi</text>
+      <text x="30" y="130" font-size="14" fill="var(--muted)" font-family="Trebuchet MS,Segoe UI,Arial,sans-serif">Schema illustrativo, non in scala</text>
+    </svg>
+    <div class="legend" role="group" aria-label="Evidenzia un materiale">
+      <button type="button" data-k="pu" aria-pressed="false">Poliuretano</button>
+      <button type="button" data-k="sil" aria-pressed="false">Silicone</button>
+      <button type="button" data-k="cond" aria-pressed="false">Conduttori</button>
+    </div>
+    <p class="note" id="note" aria-live="polite">Seleziona un materiale per vedere dove viene usato.</p>
+  </div>
+</header>
+
+<section id="progetto">
+  <h2>Il progetto</h2>
+  <p>La fibrillazione è un’alterazione del ritmo cardiaco in cui l’attività elettrica diventa rapida e disordinata. Un elettrocatetere permette di raggiungere il cuore per via endovascolare, registrare i segnali elettrici e, nelle applicazioni terapeutiche, erogare energia in modo mirato.</p>
+  <p>Il nostro lavoro riguarda la progettazione del catetere: quali materiali scegliere, come disporli e come farli lavorare insieme perché il dispositivo sia flessibile, sicuro e affidabile.</p>
+</section>
+
+<section id="struttura">
+  <h2>Struttura</h2>
+  <p>Il catetere è un sistema a strati: ogni materiale ha un compito preciso.</p>
+  <div class="cols">
+    <div class="c1"><h3>Isolamento</h3><p>Il silicone riveste il tratto distale e isola i conduttori dal sangue e dai tessuti, restando morbido a contatto con le pareti del vaso.</p></div>
+    <div class="c2"><h3>Corpo del catetere</h3><p>Il poliuretano forma la guaina: dà resistenza meccanica e consente di spingere e orientare il catetere lungo il percorso vascolare.</p></div>
+    <div class="c3"><h3>Conduzione</h3><p>Fili e elettrodi conduttori portano il segnale dal cuore allo strumento di lettura e, se serve, l’energia verso il tessuto.</p></div>
+  </div>
+</section>
+
+<section id="materiali">
+  <h2>Materiali</h2>
+  <p>Una sintesi delle scelte e delle ragioni che le guidano. Da completare con i dati del vostro progetto.</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Materiale</th><th>Ruolo</th><th>Perché</th></tr></thead>
+      <tbody>
+        <tr><td>Poliuretano</td><td>Guaina e corpo</td><td>Buona resistenza meccanica, flessibile, adatto all’uso medicale</td></tr>
+        <tr><td>Silicone</td><td>Isolante e rivestimento</td><td>Morbido, biocompatibile, stabile nel tempo a contatto con i fluidi corporei</td></tr>
+        <tr><td>Materiali conduttori</td><td>Fili ed elettrodi</td><td>Trasmettono il segnale elettrico con bassa resistenza</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="team">
+  <h2>Il gruppo</h2>
+  <p>Studenti del Politecnico di Torino. Corso e docente di riferimento: da inserire.</p>
+  <div class="team" id="team-grid"></div>
+</section>
+
+<footer>Progetto di tesina · Politecnico di Torino · Anno accademico 2026/27</footer>
+</div>
+
+<script>
+(function(){
+  var info={
+    pu:"Poliuretano: forma la guaina principale, dà resistenza e controllo durante l’inserimento.",
+    sil:"Silicone: riveste il tratto distale e isola i conduttori, morbido a contatto con i tessuti.",
+    cond:"Conduttori: fili interni ed elettrodi ad anello che rilevano il segnale elettrico."
+  };
+  var groups={pu:document.getElementById("g-pu"),sil:document.getElementById("g-sil"),cond:document.getElementById("g-cond")};
+  var note=document.getElementById("note");
+  var btns=document.querySelectorAll("button[data-k]");
+  var active=null;
+  function render(){
+    for(var k in groups){groups[k].style.opacity=(!active||active===k)?"1":"0.18";}
+    btns.forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.k===active));});
+    note.textContent=active?info[active]:"Seleziona un materiale per vedere dove viene usato.";
+  }
+  btns.forEach(function(b){b.addEventListener("click",function(){active=(active===b.dataset.k)?null:b.dataset.k;render();});});
+})();
+</script>
+<script>
+(function(){
+  var skin="#f1c9a5";
+  var people=[
+    {n:"Martina Giacalpne",hair:"#e6c15a",eye:"#4a90d9",t:"long",bg:"#dcecf5"},
+    {n:"Ludovica D’Addato",hair:"#3b2418",eye:"#6b4226",t:"long",bg:"#e8e2f3"},
+    {n:"Rosita Dolce",hair:"#2b1b14",eye:"#6b4226",t:"mid",bg:"#f6e4dc"},
+    {n:"Daniele Giorcelli",hair:"#e6c15a",eye:"#3a2a20",t:"short",bg:"#e1f0e4"},
+    {n:"Daniele Catalano",hair:"#20150f",eye:"#3a2a20",t:"curly",bg:"#f4ecd2"}
+  ];
+  function avatar(p){
+    var back="",front="";
+    if(p.t==="long"){back='<ellipse cx="50" cy="56" rx="25" ry="32" fill="'+p.hair+'"/>';front='<path d="M30 46 Q28 21 50 21 Q72 21 70 46 Q62 31 50 31 Q38 31 30 46Z" fill="'+p.hair+'"/>';}
+    if(p.t==="mid"){back='<ellipse cx="50" cy="52" rx="23" ry="26" fill="'+p.hair+'"/>';front='<path d="M30 46 Q28 21 50 21 Q72 21 70 46 Q66 30 46 30 Q36 32 30 46Z" fill="'+p.hair+'"/>';}
+    if(p.t==="short"){front='<path d="M30 46 Q27 20 50 20 Q73 20 70 46 Q66 31 50 30 Q34 31 30 46Z" fill="'+p.hair+'"/>';}
+    if(p.t==="curly"){
+      var c=[[31,36],[38,27],[50,23],[62,27],[69,36],[30,48],[70,48]],i;
+      for(i=0;i<c.length;i++){back+='<circle cx="'+c[i][0]+'" cy="'+c[i][1]+'" r="9" fill="'+p.hair+'"/>';}
+      front='<circle cx="40" cy="30" r="6" fill="'+p.hair+'"/><circle cx="50" cy="28" r="6" fill="'+p.hair+'"/><circle cx="60" cy="30" r="6" fill="'+p.hair+'"/>';
+    }
+    return '<svg viewBox="0 0 100 100" role="img" aria-label="Ritratto stilizzato di '+p.n+'"><circle cx="50" cy="50" r="50" fill="'+p.bg+'"/>'
+      +back
+      +'<path d="M16 100 Q18 74 50 72 Q82 74 84 100Z" fill="#0d6e6e"/>'
+      +'<rect x="44" y="62" width="12" height="13" fill="'+skin+'"/>'
+      +'<circle cx="50" cy="46" r="20" fill="'+skin+'"/>'
+      +front
+      +'<circle cx="42" cy="47" r="3.2" fill="'+p.eye+'"/><circle cx="58" cy="47" r="3.2" fill="'+p.eye+'"/>'
+      +'<circle cx="42" cy="47" r="1.3" fill="#111"/><circle cx="58" cy="47" r="1.3" fill="#111"/>'
+      +'<path d="M44 56 Q50 61 56 56" fill="none" stroke="#a4543f" stroke-width="2" stroke-linecap="round"/></svg>';
+  }
+  var g=document.getElementById("team-grid"),h="";
+  people.forEach(function(p){h+='<div>'+avatar(p)+'<strong>'+p.n+'</strong><br><span>Ruolo nel progetto</span></div>';});
+  g.innerHTML=h;
+})();
+</script>
+</body>
+</html>
